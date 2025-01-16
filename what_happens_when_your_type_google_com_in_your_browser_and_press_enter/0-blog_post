@@ -1,0 +1,43 @@
+What Happens When You Type https://www.google.com in Your Browser and Press Enter?
+When you type https://www.google.com in your browser and press Enter, a series of complex processes occur behind the scenes to fetch and display the webpage. Let's break down these steps:
+
+1. DNS Request
+The first step is to resolve the domain name www.google.com into an IP address. This is done through the Domain Name System (DNS). Your browser checks its cache to see if it has recently resolved this domain. If not, it sends a DNS query to a DNS server, which responds with the IP address of Google's server.
+
+2. TCP/IP
+Once the IP address is obtained, your browser establishes a connection to the server using the Transmission Control Protocol (TCP). This involves a three-way handshake:
+
+The browser sends a SYN (synchronize) packet to the server.
+
+The server responds with a SYN-ACK (synchronize-acknowledge) packet.
+
+The browser sends an ACK (acknowledge) packet back to the server.
+
+3. Firewall
+The request passes through any firewalls that may be in place. Firewalls are security systems that monitor and control incoming and outgoing network traffic based on predetermined security rules.
+
+4. HTTPS/SSL
+Since the URL uses https, the connection is secured using SSL/TLS (Secure Sockets Layer/Transport Layer Security). The browser and server perform an SSL handshake to establish a secure connection. This involves:
+
+The browser requesting the server's SSL certificate.
+
+The server sending its certificate to the browser.
+
+The browser verifying the certificate and generating a session key.
+
+The browser and server using the session key to encrypt and decrypt data.
+
+5. Load-Balancer
+The request may be routed through a load balancer, which distributes incoming network traffic across multiple servers. This ensures no single server becomes overwhelmed and helps improve the performance and reliability of the application.
+
+6. Web Server
+The request reaches Google's web server, which handles HTTP requests. The web server processes the request and determines how to respond. It may serve static content directly or forward the request to an application server for further processing.
+
+7. Application Server
+If the request requires dynamic content, the web server forwards it to an application server. The application server runs the necessary code to generate the content. This may involve executing scripts, querying databases, and performing other backend operations.
+
+8. Database
+If the application server needs to retrieve or store data, it interacts with a database. The database processes the query and returns the requested data to the application server.
+
+9. Response
+The application server sends the generated content back to the web server, which then sends it to your browser. Your browser receives the response, renders the HTML, CSS, and JavaScript, and displays the webpage.
